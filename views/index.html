@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FCC Metric-Imperial Converter</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="./public/style2.css">
+  </head>
+  <body>
+    <div id="main-container">
+      <h1>
+        FCC Metric-Imperial Converter
+      </h1>      
+        <div id="example-container">      
+          <div id="example-usage">
+            <h3>
+              Example Usage
+            </h3>
+            <p>
+              Easily convert gallons, miles and pounds to their metric equivalent or vice versa.
+              Usage is easy. Simply use the endpoint <code>/api/convert</code> and then specify what
+              you would like to convert. See below for some examples:
+            </p>
+            <div class="code-block">           
+  <code>kaput-hip.glitch.me/api/convert?input=2.5mi
+kaput-hip.glitch.me/api/convert?input=5.5kg              
+kaput-hip.glitch.me/api/convert?input=3/4gal
+kaput-hip.glitch.me/api/convert?input=7/8km
+kaput-hip.glitch.me/api/convert?input=12lbs</code>
+            </div>            
+          </div>
+          <div id="example-return">
+            <h3>
+              Example Return
+            </h3>
+            <p>
+              The api call will return the requested conversion in JSON format.<br> See below for an example return:
+            </p>
+            <div class="code-block">              
+  <code>  {
+   "initNum":2.5,
+   "initUnit":"mi",
+   "returnNum":4.02335,
+   "returnUnit":"km",
+   "string":"2.5 miles converts to 4.02335 kilometers"
+  }</code>              
+            </div> 
+          </div>
+        </div>      
+      <div id="submit-container">
+        <form id="subForm" action="/api/convert" method="get">
+          <input type="text" name="input" placeholder="ex. 2.5mi">
+          <input type="submit" value="Convert" name="convert">
+        </form>
+        <div id="convert-text"></div>
+      <div id="json-container"></div>
+      </div>      
+    </div> 
+    <script src="./public/client.js"></script>
+  </body>
+</html>
